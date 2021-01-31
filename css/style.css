@@ -123,6 +123,11 @@ body {
     color: #102746;
     position: relative;
 }
+input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
 .scroll__top {
     display: none;
     position: fixed;
