@@ -1,6 +1,7 @@
-(function () {
+
     const tabs = document.querySelectorAll('.tab');
     const forms = document.querySelectorAll('.form');
+    const rememberLink = document.querySelector('.remember_link-target')
     let tabNav;
     console.log(tabs)
     const formSelect = function (tabNav) {
@@ -16,6 +17,10 @@
     const tabsSelect = function () {
         tabs.forEach(item => {
             item.classList.remove('tab_active');
+            if (item.classList.contains('remember_link')) {
+
+                rememberLink.classList.add('tab_active')
+            }
         });
         tabNav = this.getAttribute('data_form');
         this.classList.add('tab_active');
@@ -23,8 +28,4 @@
     };
     tabs.forEach(item => {
         item.addEventListener('click', tabsSelect)
-
     });
-
-
-}())

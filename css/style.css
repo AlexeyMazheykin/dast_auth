@@ -19,7 +19,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-authular'), url('../fonts/roboto-v20-latin_cyrillic-authular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/roboto-v20-latin_cyrillic-authular.woff') format('woff');
+    src: local('Roboto'), local('Roboto-authular'), url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff');
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -88,9 +88,9 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/montserrat-v15-latin_cyrillic-authular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/montserrat-v15-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
     src: local('Montserrat authular'), local('Montserrat-authular'),
-    url('../fonts/montserrat-v15-latin_cyrillic-authular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/montserrat-v15-latin_cyrillic-authular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/montserrat-v15-latin_cyrillic-authular.woff') format('woff'), /* Modern Browsers */ url('../fonts/montserrat-v15-latin_cyrillic-authular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/montserrat-v15-latin_cyrillic-authular.svg#Montserrat') format('svg'); /* Legacy iOS */
+    url('../fonts/montserrat-v15-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/montserrat-v15-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/montserrat-v15-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/montserrat-v15-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/montserrat-v15-latin_cyrillic-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 
 /* montserrat-600 - latin_cyrillic */
@@ -115,7 +115,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 16px;
     line-height: 1.2;
@@ -344,7 +344,7 @@ overflow: hidden;
     max-width: 500px;
     padding-left: 30px;
     color: #ffffff;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     z-index: 5;
 }
 
@@ -405,7 +405,7 @@ overflow: hidden;
 
 .about {
     padding: 50px 0 50px 0;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .about__description {
@@ -493,7 +493,7 @@ overflow: hidden;
     left: 20px;
     font-size: 16px;
     text-transform: uppercase;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     color: white;
     letter-spacing: 2px;
     transition: transform 0.6s;
@@ -506,7 +506,7 @@ overflow: hidden;
     color: white;
     padding: 30px;
     font-size: 14px;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     opacity: 0;
     transition: opacity .8s, transform 1s;
     line-height: 1.5;
@@ -560,7 +560,7 @@ overflow: hidden;
     overflow: hidden;
 }
 .best__title {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -665,19 +665,18 @@ overflow: hidden;
 .form_wrap {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
+    justify-content: space-between;    margin: 0 auto;
+    max-width: 1170px;    min-height: 100vh;
 }
 
 .auth {
-    margin: 0 auto;
-    max-width: 1170px;
+    max-width: 260px;
     padding: 0 15px;
 }
 .auth h3 {
     font-weight: 300;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 30px;
 }
 .auth-form_footer {
@@ -695,42 +694,58 @@ overflow: hidden;
     background: rgb(40,161,220);
     border: none;
     color: white;
-    width: 100px;
+    width: 110px;
     height: 34px;
-    margin-right: 20px;
+}
+.input_row {
+    display: flex;
+    justify-content: space-between;
 }
 .input_field {
     border: solid 1px #5a5a5a;
     padding: 5px;
-    font-size: 15px;
+    font-size: 14px;
 }
 .input_row:last-child {
     display: flex;
 }
-.remember_link {
+.remember_link, .remember_link-target {
     font-size: 12px;
 }
 .tabs {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .tab {
     display: inline-block;
     color: #8a8a8a;
     cursor: pointer;
 }
-.tab_auth {
-    margin-right: 10px;
-}
+
 .tab_active {
     color:rgb(40,161,220);
     /*text-shadow: 2px 5px 7px rgba(40, 161, 220, 0.82);*/
     text-shadow: 2px 4px 7px rgba(138, 138, 138, 0.82);
 }
-.auth_form, .reg_form {
+.auth_form, .reg_form, .remind_form {
     display: none;
 }
 .form_active {
     display: block;
+}
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    width: 100%;
+}
+.captcha_pic {
+    height: 40px;
+}
+.captcha_pic-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+;
+
 }
 
 
